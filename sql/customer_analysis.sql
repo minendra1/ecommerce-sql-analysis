@@ -1,5 +1,4 @@
--- ============================================
--- customer_analysis.sql
+﻿-- customer_analysis.sql
 -- Purpose: Analyze customer behavior and spending
 -- Run this AFTER cleaning.sql
 --
@@ -11,35 +10,28 @@
 --
 -- Revenue formula:
 --   line_revenue = quantity * unit_price * (1 - discount)
--- ============================================
 
 USE ecommerce_analysis;
 
--- ===========================
 -- Q1: How many total registered customers do we have?
--- Business purpose: Basic metric — size of customer base.
--- ===========================
+-- Business purpose: Basic metric â€” size of customer base.
 SELECT COUNT(*) AS total_customers FROM customers;
 
--- ===========================
 -- Q2: How many customers actually placed at least one order?
 -- Business purpose: Not all registered users buy something.
 --   The gap between registered and active customers shows
 --   conversion effectiveness.
 -- SQL concept: COUNT(DISTINCT) counts unique values only.
--- ===========================
 SELECT
     COUNT(DISTINCT o.customer_id) AS customers_who_ordered
 FROM orders o;
 
--- ===========================
 -- Q3: Which customers NEVER placed an order?
 -- Business purpose: These are potential customers who registered
 --   but never converted. Marketing could target them.
 -- SQL concept: LEFT JOIN + WHERE NULL is the standard pattern
 --   to find rows in one table with NO match in another.
---   INNER JOIN would miss these — it only returns matches.
--- ===========================
+--   INNER JOIN would miss these â€” it only returns matches.
 SELECT
     c.customer_id,
     c.first_name,
@@ -52,12 +44,10 @@ FROM customers c
 LEFT JOIN orders o ON c.customer_id = o.customer_id
 WHERE o.order_id IS NULL;
 
--- ===========================
 -- Q4: How many orders does each customer have?
 -- Business purpose: Understanding purchase frequency helps
 --   identify loyal vs one-time customers.
 -- SQL concept: GROUP BY customer + COUNT(order_id)
--- ===========================
 SELECT
     c.customer_id,
     CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
@@ -67,12 +57,10 @@ LEFT JOIN orders o ON c.customer_id = o.customer_id
 GROUP BY c.customer_id, customer_name
 ORDER BY total_orders DESC;
 
--- ===========================
 -- Q5: Top 10 customers by revenue
--- Business purpose: The Pareto principle — a small percentage
+-- Business purpose: The Pareto principle â€” a small percentage
 --   of customers often generate most of the revenue.
 --   Identifying top customers helps prioritize VIP treatment.
--- ===========================
 SELECT
     c.customer_id,
     CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
@@ -88,14 +76,12 @@ GROUP BY c.customer_id, customer_name, c.city, c.state
 ORDER BY total_revenue DESC
 LIMIT 10;
 
--- ===========================
 -- Q6: How many repeat customers are there?
 -- Business purpose: Repeat customers are more valuable than
 --   one-time buyers. They cost less to retain than acquiring new ones.
 -- Definition: A "repeat customer" has placed MORE THAN 1 order.
--- SQL concept: Subquery — first count orders per customer,
+-- SQL concept: Subquery â€” first count orders per customer,
 --   then count how many have > 1 order.
--- ===========================
 SELECT
     COUNT(*) AS repeat_customers
 FROM (
@@ -105,12 +91,10 @@ FROM (
     HAVING COUNT(order_id) > 1
 ) AS repeat_cust;
 
--- ===========================
 -- Q7: What percentage of customers are repeat customers?
 -- Business purpose: Repeat rate is a key retention metric.
 --   A high repeat rate means customers are satisfied.
 -- Formula: (repeat customers / total customers who ordered) * 100
--- ===========================
 SELECT
     COUNT(DISTINCT o.customer_id) AS total_active_customers,
     (SELECT COUNT(*) FROM (
@@ -129,11 +113,9 @@ SELECT
     2) AS repeat_rate_percent
 FROM orders o;
 
--- ===========================
 -- Q8: Average revenue per customer
 -- Business purpose: Customer lifetime value approximation.
 --   Higher average = more valuable customer base.
--- ===========================
 SELECT
     ROUND(
         SUM(oi.quantity * oi.unit_price * (1 - oi.discount)) /
@@ -143,12 +125,10 @@ FROM order_items oi
 JOIN orders o ON oi.order_id = o.order_id
 WHERE o.status = 'Completed';
 
--- ===========================
 -- Q9: Revenue by STATE (regional analysis)
 -- Business purpose: Identify which regions generate the most
 --   revenue. Helps with marketing budget allocation and
 --   logistics planning.
--- ===========================
 SELECT
     c.state,
     COUNT(DISTINCT c.customer_id) AS customer_count,
@@ -161,11 +141,9 @@ WHERE o.status = 'Completed'
 GROUP BY c.state
 ORDER BY total_revenue DESC;
 
--- ===========================
 -- Q10: Revenue by CITY (top 10 cities)
 -- Business purpose: More granular than state-level.
 --   Shows which specific cities are profit centers.
--- ===========================
 SELECT
     c.city,
     c.state,
@@ -180,14 +158,12 @@ GROUP BY c.city, c.state
 ORDER BY total_revenue DESC
 LIMIT 10;
 
--- ===========================
 -- Q11: Customer purchase frequency distribution
 -- Business purpose: How many customers ordered once, twice,
 --   three times, etc.? Shows the shape of customer loyalty.
 -- SQL concept: This is a "frequency of frequencies" query.
 --   First subquery: count orders per customer
 --   Outer query: count customers per order frequency
--- ===========================
 SELECT
     order_count,
     COUNT(*) AS number_of_customers

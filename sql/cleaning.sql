@@ -1,4 +1,4 @@
--- cleaning.sql
+﻿-- cleaning.sql
 -- Purpose: Data quality checks before analysis
 -- Run this AFTER data.sql
 -- Note: This file detects problems but does not delete data.

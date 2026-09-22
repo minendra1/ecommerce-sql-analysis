@@ -1,5 +1,4 @@
--- ============================================
--- advanced_analysis.sql
+﻿-- advanced_analysis.sql
 -- Purpose: Advanced SQL analysis using CTEs, window functions,
 --          subqueries, CASE statements, and date functions
 -- Run this AFTER the basic analysis files
@@ -24,11 +23,9 @@
 --
 --   PARTITION BY: Divides rows into groups for window functions
 --     (similar to GROUP BY but doesn't collapse rows)
--- ============================================
 
 USE ecommerce_analysis;
 
--- ===========================
 -- Q1: Monthly revenue with month-over-month change (using LAG)
 -- Business purpose: How is revenue changing month to month?
 --   Positive change = growth, negative = decline.
@@ -36,7 +33,6 @@ USE ecommerce_analysis;
 --   the PREVIOUS month's revenue. LAG looks back one row.
 -- Why CTE: First calculate monthly revenue, then apply LAG.
 --   Doing it in one query would be messy.
--- ===========================
 WITH monthly_revenue AS (
     SELECT
         DATE_FORMAT(o.order_date, '%Y-%m') AS month,
@@ -58,13 +54,11 @@ SELECT
 FROM monthly_revenue
 ORDER BY month;
 
--- ===========================
 -- Q2: Rank customers by total revenue (using RANK)
 -- Business purpose: Identify the most valuable customers.
 -- Why RANK instead of ORDER BY alone: RANK assigns an explicit
 --   position number that we can filter on (e.g., top 10).
 --   If two customers tie, they get the same rank.
--- ===========================
 WITH customer_revenue AS (
     SELECT
         c.customer_id,
@@ -88,14 +82,12 @@ SELECT
 FROM customer_revenue
 LIMIT 15;
 
--- ===========================
 -- Q3: Rank products WITHIN each category (using DENSE_RANK + PARTITION BY)
 -- Business purpose: Who's the #1 product in each category?
 --   This is more useful than a global ranking because a cheap
 --   category will never compete with an expensive one.
 -- Why DENSE_RANK: No gaps in ranking (1, 2, 3 not 1, 2, 4).
 -- Why PARTITION BY: Creates separate rankings per category.
--- ===========================
 WITH product_sales AS (
     SELECT
         c.category_name,
@@ -118,13 +110,11 @@ SELECT
 FROM product_sales
 ORDER BY category_name, rank_in_category;
 
--- ===========================
 -- Q4: Identify repeat customers (using subquery)
 -- Business purpose: Repeat customers are the backbone of
 --   a sustainable business. They cost less to retain than
 --   acquiring new customers.
 -- Definition: A repeat customer has placed MORE THAN 1 order.
--- ===========================
 SELECT
     c.customer_id,
     CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
@@ -147,13 +137,11 @@ JOIN (
 ) AS order_data ON c.customer_id = order_data.customer_id
 ORDER BY order_data.total_orders DESC;
 
--- ===========================
 -- Q5: Customer segmentation by spending (using CASE + CTE)
 -- Business purpose: Segment customers into tiers for targeted
 --   marketing. High-value customers get premium treatment,
 --   low-value ones get re-engagement campaigns.
 -- Why CASE: Creates conditional categories based on spending.
--- ===========================
 WITH customer_spending AS (
     SELECT
         c.customer_id,
@@ -178,7 +166,6 @@ FROM customer_spending
 GROUP BY customer_segment
 ORDER BY total_segment_revenue DESC;
 
--- ===========================
 -- Q6: Most recent order per customer (using ROW_NUMBER)
 -- Business purpose: When did each customer last purchase?
 --   Customers who haven't purchased recently may be at risk of churning.
@@ -186,7 +173,6 @@ ORDER BY total_segment_revenue DESC;
 --   We then filter to keep only row_number = 1.
 -- Why not just MAX(order_date): Because we also want the order_id
 --   and status of that specific latest order, not just the date.
--- ===========================
 WITH ranked_orders AS (
     SELECT
         o.customer_id,
@@ -209,13 +195,11 @@ WHERE rn = 1
 ORDER BY last_order_date DESC
 LIMIT 20;
 
--- ===========================
 -- Q7: Running total of monthly revenue (using window SUM)
 -- Business purpose: Shows cumulative revenue growth over time.
 --   Useful for tracking progress toward annual targets.
 -- Why window SUM: Regular SUM with GROUP BY gives monthly totals.
 --   Window SUM with ROWS BETWEEN gives a running (cumulative) total.
--- ===========================
 WITH monthly_revenue AS (
     SELECT
         DATE_FORMAT(o.order_date, '%Y-%m') AS month,
@@ -233,12 +217,10 @@ SELECT
 FROM monthly_revenue
 ORDER BY month;
 
--- ===========================
 -- Q8: Compare current month with NEXT month (using LEAD)
--- Business purpose: Forecast planning — if next month's revenue
+-- Business purpose: Forecast planning â€” if next month's revenue
 --   is expected to drop, the company can prepare.
 -- Why LEAD: Opposite of LAG. LEAD looks FORWARD one row.
--- ===========================
 WITH monthly_revenue AS (
     SELECT
         DATE_FORMAT(o.order_date, '%Y-%m') AS month,
@@ -258,13 +240,11 @@ SELECT
 FROM monthly_revenue
 ORDER BY month;
 
--- ===========================
 -- Q9: 3-month moving average revenue (using window AVG)
 -- Business purpose: Smooths out monthly fluctuations to reveal
 --   the underlying trend. Widely used in business reporting.
 -- Why window AVG with ROWS BETWEEN: Averages the current month
 --   plus the two preceding months.
--- ===========================
 WITH monthly_revenue AS (
     SELECT
         DATE_FORMAT(o.order_date, '%Y-%m') AS month,
@@ -283,14 +263,12 @@ SELECT
 FROM monthly_revenue
 ORDER BY month;
 
--- ===========================
 -- Q10: Category contribution to total revenue (percentage)
 -- Business purpose: Shows each category's share of overall revenue.
 --   Helps identify which categories the business depends on most.
 -- Why window SUM: We need the total revenue (across ALL categories)
 --   alongside each category's revenue. A regular SUM with GROUP BY
 --   can't give us both in one query without a subquery.
--- ===========================
 WITH category_revenue AS (
     SELECT
         cat.category_name,
@@ -310,11 +288,9 @@ SELECT
 FROM category_revenue
 ORDER BY revenue DESC;
 
--- ===========================
--- Q11: KPI Dashboard — All key metrics in one query
+-- Q11: KPI Dashboard â€” All key metrics in one query
 -- Business purpose: A single query that returns all important
 --   KPIs. This is what a CEO or manager would see at a glance.
--- ===========================
 SELECT
     ROUND(SUM(oi.quantity * oi.unit_price * (1 - oi.discount)), 2) AS total_revenue,
     COUNT(DISTINCT o.order_id) AS total_completed_orders,

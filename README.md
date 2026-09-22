@@ -33,6 +33,27 @@ An e-commerce company wants to understand its business performance. The company 
 
 ---
 
+## Project Execution Flow
+
+This project follows a structured lifecycle from database creation to advanced analytics. The flow below illustrates how the different SQL scripts interact:
+
+```mermaid
+graph TD
+    A[database.sql<br>Create DB] --> B[tables.sql<br>Define Schema]
+    B --> C[data.sql<br>Load CSV Data]
+    C --> D[cleaning.sql<br>Data Quality Checks]
+    
+    D --> E[sales_analysis.sql]
+    D --> F[customer_analysis.sql]
+    D --> G[product_analysis.sql]
+    
+    E --> H[advanced_analysis.sql<br>KPIs & Window Functions]
+    F --> H
+    G --> H
+```
+
+---
+
 ## Database Schema
 
 The database contains **5 tables** with the following relationships:
@@ -47,11 +68,57 @@ customers (1) ──< (many) orders (1) ──< (many) order_items (many) >─�
 
 | Table | Rows | Description |
 |-------|------|-------------|
-| `categories` | 8 | Product categories (Electronics, Clothing, Books, etc.) |
+| `categories` | 28 | Product categories (Electronics, Clothing, Books, etc.) |
 | `products` | 25 | Products with selling price and cost price |
-| `customers` | 100 | Customers with name, email, city, state, and registration date |
+| `customers` | 500 | Customers with name, email, city, state, and registration date |
 | `orders` | ~500 | Purchase transactions with date and status (Completed/Cancelled/Returned) |
 | `order_items` | ~1000 | Individual product lines within orders (quantity, price, discount) |
+
+### Data Dictionary
+
+#### `categories`
+| Column | Type | Description |
+|--------|------|-------------|
+| `category_id` | INT | Primary Key. Unique ID for each category. |
+| `category_name` | VARCHAR(50) | Name of the category. |
+
+#### `products`
+| Column | Type | Description |
+|--------|------|-------------|
+| `product_id` | INT | Primary Key. Unique ID for each product. |
+| `product_name` | VARCHAR(100) | Name of the product. |
+| `category_id` | INT | Foreign Key referencing `categories.category_id`. |
+| `price` | DECIMAL(10,2) | Selling price of the product. |
+| `cost` | DECIMAL(10,2) | Cost price of the product. |
+
+#### `customers`
+| Column | Type | Description |
+|--------|------|-------------|
+| `customer_id` | INT | Primary Key. Unique ID for each customer. |
+| `first_name` | VARCHAR(50) | Customer's first name. |
+| `last_name` | VARCHAR(50) | Customer's last name. |
+| `email` | VARCHAR(100) | Customer's email address. |
+| `city` | VARCHAR(50) | City of residence. |
+| `state` | VARCHAR(50) | State of residence. |
+| `registration_date`| DATE | Date the customer signed up. |
+
+#### `orders`
+| Column | Type | Description |
+|--------|------|-------------|
+| `order_id` | INT | Primary Key. Unique ID for each order. |
+| `customer_id` | INT | Foreign Key referencing `customers.customer_id`. |
+| `order_date` | DATE | Date the order was placed. |
+| `status` | VARCHAR(20) | Order status (e.g., Completed, Cancelled, Returned). |
+
+#### `order_items`
+| Column | Type | Description |
+|--------|------|-------------|
+| `order_item_id` | INT | Primary Key. Unique ID for each line item. |
+| `order_id` | INT | Foreign Key referencing `orders.order_id`. |
+| `product_id` | INT | Foreign Key referencing `products.product_id`. |
+| `quantity` | INT | Number of units purchased. |
+| `unit_price` | DECIMAL(10,2) | Price per unit at the time of purchase. |
+| `discount` | DECIMAL(4,2) | Discount applied to the item. |
 
 ### Key Relationships
 
@@ -213,7 +280,7 @@ ecommerce-sql-analysis/
 ├── sql/
 │   ├── database.sql           — Creates the MySQL database
 │   ├── tables.sql             — Creates all 5 tables with keys and constraints
-│   ├── data.sql               — Inserts sample data (100 customers, ~500 orders)
+│   ├── data.sql               — Inserts sample data (500 customers, ~500 orders)
 │   ├── cleaning.sql           — Data quality checks (10 types of validation)
 │   ├── sales_analysis.sql     — Revenue, orders, trends analysis (10 queries)
 │   ├── customer_analysis.sql  — Customer behavior analysis (11 queries)
