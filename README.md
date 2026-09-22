@@ -2,7 +2,6 @@
 
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-blue.svg)
 ![Data Analysis](https://img.shields.io/badge/Data_Analysis-SQL-green.svg)
-![Status](https://img.shields.io/badge/Status-Completed-success.svg)
 
 > A SQL-based data analysis portfolio project exploring e-commerce sales data to uncover actionable insights about revenue, customers, products, and trends.
 
