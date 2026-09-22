@@ -229,9 +229,43 @@ ecommerce-sql-analysis/
 
 ### Prerequisites
 - MySQL 8.0 or higher installed
-- MySQL command line client or MySQL Workbench
+- VS Code with a MySQL extension (like "MySQL" by Weijan Chen or "Database Client") OR MySQL command-line client
 
-### Steps
+### Method 1: Using VS Code (Recommended for Interviews)
+
+This is the easiest way to view and present your data directly inside your editor.
+
+1. **Clone the repository and open in VS Code**
+   ```bash
+   git clone https://github.com/minendra1/ecommerce-sql-analysis.git
+   ```
+   Open the `ecommerce-sql-analysis` folder in VS Code.
+
+2. **Connect to your Database**
+   - Click on the database/SQL extension icon in the left sidebar of VS Code.
+   - Add a new connection using your local credentials (Host: `127.0.0.1`, User: `root`, Password: `<your_password>`).
+   - Leave the "Database" field empty for now and click **Connect**.
+
+3. **Run Setup Scripts (In Order)**
+   Open the following files one by one. For each file, highlight all the text, right-click, and select **"Run MySQL Query"**:
+   1. `sql/database.sql` (Creates the database)
+   2. `sql/tables.sql` (Creates the table structures)
+   3. `sql/data.sql` (Loads the CSV data into the tables)
+
+4. **Set Default Database**
+   - Now that the database is created, right-click your connection in the left sidebar and select **Edit Connection**.
+   - In the "Database" field, type `ecommerce_analysis` and save.
+
+5. **Run Analysis Queries**
+   - Open any analysis file (e.g., `sql/advanced_analysis.sql`).
+   - Highlight a specific query, right-click, and select **"Run MySQL Query"**.
+   - The results will appear in a formatted table on your screen.
+
+---
+
+### Method 2: Using the Command Line (PowerShell)
+
+If you prefer to run everything from the terminal with a single command:
 
 1. **Clone the repository**
    ```bash
@@ -239,35 +273,21 @@ ecommerce-sql-analysis/
    cd ecommerce-sql-analysis
    ```
 
-2. **Create the database**
-   ```bash
-   mysql -u root -p < sql/database.sql
+2. **Run all setup scripts in one command**
+   ```powershell
+   Get-Content sql\database.sql, sql\tables.sql, sql\data.sql | & "C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe" --local-infile=1 -u root -p
    ```
+   *(Enter your password when prompted)*
 
-3. **Create the tables**
+3. **Run analysis queries**
+   You can now open the MySQL shell and source the analysis files:
    ```bash
-   mysql -u root -p ecommerce_analysis < sql/tables.sql
+   & "C:\Program Files\MySQL\MySQL Server 8.0\bin\mysql.exe" -u root -p
    ```
-
-4. **Load the data**
-   ```bash
-   mysql -u root -p ecommerce_analysis < sql/data.sql
+   ```sql
+   USE ecommerce_analysis;
+   source sql/sales_analysis.sql;
    ```
-
-5. **Run data quality checks**
-   ```bash
-   mysql -u root -p ecommerce_analysis < sql/cleaning.sql
-   ```
-
-6. **Run analysis queries** (in any order)
-   ```bash
-   mysql -u root -p ecommerce_analysis < sql/sales_analysis.sql
-   mysql -u root -p ecommerce_analysis < sql/customer_analysis.sql
-   mysql -u root -p ecommerce_analysis < sql/product_analysis.sql
-   mysql -u root -p ecommerce_analysis < sql/advanced_analysis.sql
-   ```
-
-Alternatively, open each `.sql` file in MySQL Workbench and execute the queries individually.
 
 ---
 
