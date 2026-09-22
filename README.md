@@ -1,24 +1,23 @@
 # E-Commerce Sales Analysis Using MySQL
 
-A SQL-based data analysis project that explores an e-commerce company's sales data to uncover business insights about revenue, customers, products, and trends.
+![MySQL](https://img.shields.io/badge/MySQL-8.0-blue.svg)
+![Data Analysis](https://img.shields.io/badge/Data_Analysis-SQL-green.svg)
+![Status](https://img.shields.io/badge/Status-Completed-success.svg)
 
-This is a **student portfolio project** built to demonstrate SQL and data analysis skills for Data Analyst interviews.
+> A SQL-based data analysis portfolio project exploring e-commerce sales data to uncover actionable insights about revenue, customers, products, and trends.
 
 ---
 
-## Business Problem
+## 📌 Business Problem
 
-An e-commerce company wants to understand its business performance. The company needs answers to questions like:
+An e-commerce company needs to evaluate its business performance. Key questions include:
 
-- How much revenue are we generating?
-- Which products and categories drive the most sales?
-- Who are our most valuable customers?
-- Are customers coming back to buy again?
-- Which regions perform best?
-- How is revenue trending month over month?
-- Where is our profit coming from?
+- **Revenue & Profit:** How much are we generating, and where is our profit coming from?
+- **Products:** Which products and categories drive the most sales?
+- **Customers:** Who are our most valuable customers, and are they returning?
+- **Trends:** Which regions perform best, and how is revenue trending month-over-month?
 
-**Goal:** Use SQL to analyze e-commerce data and generate actionable business insights.
+**Goal:** Use SQL to analyze transactional data and generate actionable business intelligence.
 
 ---
 
