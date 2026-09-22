@@ -1,0 +1,3 @@
+-- customer_analysis.sql
+-- Purpose: SQL queries analyzing customer behavior and spending
+-- Run this AFTER cleaning.sql

@@ -1,0 +1,3 @@
+-- product_analysis.sql
+-- Purpose: SQL queries analyzing product and category performance
+-- Run this AFTER cleaning.sql

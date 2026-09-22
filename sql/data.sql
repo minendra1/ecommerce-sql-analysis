@@ -1,0 +1,3 @@
+-- data.sql
+-- Purpose: Insert sample data into all tables
+-- Run this AFTER tables.sql

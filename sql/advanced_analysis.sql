@@ -1,0 +1,3 @@
+-- advanced_analysis.sql
+-- Purpose: Advanced SQL queries using CTEs, window functions, and rankings
+-- Run this AFTER the basic analysis files

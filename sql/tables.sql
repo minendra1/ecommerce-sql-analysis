@@ -1,0 +1,3 @@
+-- tables.sql
+-- Purpose: Create all tables for the ecommerce_analysis database
+-- Run this AFTER database.sql

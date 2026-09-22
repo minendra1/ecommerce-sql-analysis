@@ -1,0 +1,3 @@
+-- sales_analysis.sql
+-- Purpose: SQL queries for overall sales and revenue analysis
+-- Run this AFTER cleaning.sql
