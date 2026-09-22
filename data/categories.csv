@@ -1,4 +1,4 @@
-category_id,category_name
+﻿category_id,category_name
 1,Electronics
 2,Clothing
 3,Books
@@ -7,23 +7,25 @@ category_id,category_name
 6,Beauty & Health
 7,Toys & Games
 8,Food & Beverages
-9,Category_9
-10,Category_10
-11,Category_11
-12,Category_12
-13,Category_13
-14,Category_14
-15,Category_15
-16,Category_16
-17,Category_17
-18,Category_18
-19,Category_19
-20,Category_20
-21,Category_21
-22,Category_22
-23,Category_23
-24,Category_24
-25,Category_25
-26,Category_26
-27,Category_27
-28,Category_28
+9,Automotive
+10,Pet Supplies
+11,Baby
+12,Jewelry
+13,Watches
+14,Shoes
+15,Software
+16,Musical Instruments
+17,Office Products
+18,Industrial & Scientific
+19,Arts & Crafts
+20,Tools & Home Improvement
+21,Garden & Outdoors
+22,Grocery
+23,Video Games
+24,Movies & TV
+25,CDs & Vinyl
+26,Collectibles & Fine Art
+27,Handmade
+28,Furniture
+29,Appliances
+30,Health & Personal Care

@@ -11,7 +11,7 @@
 --        Then reconnect with: mysql --local-infile=1 -u root -p
 --
 -- Dataset size:
---   28 categories, 25 products, 500 customers,
+--   30 categories, 25 products, 500 customers,
 --   500 orders, 1000 order items
 --
 -- All CSV files are in the data/ folder of this project.

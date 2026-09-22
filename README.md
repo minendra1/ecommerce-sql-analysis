@@ -67,7 +67,7 @@ customers (1) ──< (many) orders (1) ──< (many) order_items (many) >─�
 
 | Table | Rows | Description |
 |-------|------|-------------|
-| `categories` | 28 | Product categories (Electronics, Clothing, Books, etc.) |
+| `categories` | 30 | Product categories (Electronics, Clothing, Books, etc.) |
 | `products` | 25 | Products with selling price and cost price |
 | `customers` | 500 | Customers with name, email, city, state, and registration date |
 | `orders` | ~500 | Purchase transactions with date and status (Completed/Cancelled/Returned) |
