@@ -1,0 +1,51 @@
+product_id,product_name,category_id,price,cost
+1,Wireless Headphones,1,2499.00,1500.00
+2,Smartphone Case,1,499.00,200.00
+3,USB-C Charger,1,799.00,400.00
+4,Bluetooth Speaker,1,3499.00,2100.00
+5,Cotton T-Shirt,2,599.00,250.00
+6,Denim Jeans,2,1499.00,700.00
+7,Running Shoes,2,2999.00,1800.00
+8,Winter Jacket,2,3999.00,2200.00
+9,Python Programming,3,499.00,200.00
+10,Data Science Handbook,3,699.00,300.00
+11,Business Strategy,3,399.00,150.00
+12,Stainless Steel Bottle,4,699.00,350.00
+13,Non-stick Pan,4,1199.00,600.00
+14,Coffee Maker,4,4999.00,3000.00
+15,Yoga Mat,5,899.00,400.00
+16,Resistance Bands,5,599.00,250.00
+17,Fitness Tracker,5,2499.00,1400.00
+18,Face Wash,6,349.00,150.00
+19,Sunscreen Lotion,6,499.00,200.00
+20,Hair Dryer,6,1599.00,800.00
+21,Board Game,7,899.00,400.00
+22,Building Blocks,7,1299.00,600.00
+23,Puzzle Set,7,499.00,200.00
+24,Green Tea Pack,8,399.00,180.00
+25,Protein Bars Box,8,799.00,400.00
+26,Smartwatch,1,4999.00,3000.00
+27,Tablet,1,15000.00,10000.00
+28,Mouse,1,699.00,300.00
+29,Keyboard,1,1299.00,700.00
+30,Monitor,1,8000.00,5500.00
+31,Polo Shirt,2,799.00,400.00
+32,Sweater,2,1299.00,600.00
+33,Sneakers,2,1999.00,1000.00
+34,Socks (Pack of 3),2,299.00,100.00
+35,Cookbook,3,599.00,250.00
+36,Sci-Fi Novel,3,399.00,150.00
+37,History Book,3,499.00,200.00
+38,Blender,4,2500.00,1500.00
+39,Microwave Oven,4,6500.00,4000.00
+40,Cutlery Set,4,899.00,400.00
+41,Dumbbells (Pair),5,1500.00,800.00
+42,Jump Rope,5,199.00,80.00
+43,Gym Bag,5,599.00,250.00
+44,Shampoo,6,299.00,120.00
+45,Moisturizer,6,450.00,200.00
+46,Lip Balm,6,150.00,50.00
+47,Action Figure,7,799.00,350.00
+48,Doll,7,699.00,300.00
+49,Coffee Beans,8,599.00,250.00
+50,Almonds (500g),8,899.00,500.00

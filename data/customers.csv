@@ -1,0 +1,101 @@
+customer_id,first_name,last_name,email,city,state,registration_date
+1,Rahul,Sharma,rahul.sharma@email.com,Mumbai,Maharashtra,2022-01-15
+2,Priya,Patel,priya.patel@email.com,Ahmedabad,Gujarat,2022-01-20
+3,Amit,Singh,amit.singh@email.com,Delhi,Delhi,2022-02-10
+4,Sneha,Gupta,sneha.gupta@email.com,Bangalore,Karnataka,2022-02-14
+5,Vikram,Reddy,vikram.reddy@email.com,Hyderabad,Telangana,2022-02-28
+6,Neha,Joshi,neha.joshi@email.com,Pune,Maharashtra,2022-03-05
+7,Arjun,Kumar,arjun.kumar@email.com,Chennai,Tamil Nadu,2022-03-12
+8,Pooja,Mehta,pooja.mehta@email.com,Mumbai,Maharashtra,2022-03-18
+9,Rohan,Verma,rohan.verma@email.com,Jaipur,Rajasthan,2022-03-25
+10,Divya,Nair,divya.nair@email.com,Kochi,Kerala,2022-04-01
+11,Sanjay,Mishra,sanjay.mishra@email.com,Lucknow,Uttar Pradesh,2022-04-10
+12,Anita,Rao,anita.rao@email.com,Bangalore,Karnataka,2022-04-15
+13,Deepak,Chopra,deepak.chopra@email.com,Delhi,Delhi,2022-04-20
+14,Kavita,Shah,kavita.shah@email.com,Surat,Gujarat,2022-05-01
+15,Rajesh,Iyer,rajesh.iyer@email.com,Chennai,Tamil Nadu,2022-05-08
+16,Ritu,Malhotra,ritu.malhotra@email.com,Chandigarh,Punjab,2022-05-15
+17,Kiran,Desai,kiran.desai@email.com,Pune,Maharashtra,2022-05-22
+18,Meera,Banerjee,meera.banerjee@email.com,Kolkata,West Bengal,2022-06-01
+19,Manoj,Thakur,manoj.thakur@email.com,Bhopal,Madhya Pradesh,2022-06-10
+20,Shruti,Kapoor,shruti.kapoor@email.com,Delhi,Delhi,2022-06-15
+21,Nitin,Agarwal,nitin.agarwal@email.com,Noida,Uttar Pradesh,2022-06-20
+22,Swati,Das,swati.das@email.com,Kolkata,West Bengal,2022-06-25
+23,Sachin,Pandey,sachin.pandey@email.com,Lucknow,Uttar Pradesh,2022-07-01
+24,Sunita,Chauhan,sunita.chauhan@email.com,Jaipur,Rajasthan,2022-07-08
+25,Vikas,Saxena,vikas.saxena@email.com,Indore,Madhya Pradesh,2022-07-15
+26,Rekha,Yadav,rekha.yadav@email.com,Patna,Bihar,2022-07-22
+27,Ajay,Jain,ajay.jain@email.com,Mumbai,Maharashtra,2022-07-28
+28,Komal,Tiwari,komal.tiwari@email.com,Bhopal,Madhya Pradesh,2022-08-05
+29,Ravi,Kulkarni,ravi.kulkarni@email.com,Bangalore,Karnataka,2022-08-10
+30,Anju,Pillai,anju.pillai@email.com,Hyderabad,Telangana,2022-08-15
+31,Sunil,Patil,sunil.patil@email.com,Ahmedabad,Gujarat,2022-08-20
+32,Nisha,Bhatia,nisha.bhatia@email.com,Delhi,Delhi,2022-08-25
+33,Akash,Dubey,akash.dubey@email.com,Noida,Uttar Pradesh,2022-09-01
+34,Pallavi,Gokhale,pallavi.gokhale@email.com,Pune,Maharashtra,2022-09-05
+35,Pradeep,Menon,pradeep.menon@email.com,Mumbai,Maharashtra,2022-09-10
+36,Suman,Nambiar,suman.nambiar@email.com,Kochi,Kerala,2022-09-15
+37,Varun,Chadha,varun.chadha@email.com,Surat,Gujarat,2022-09-20
+38,Bhavna,Trivedi,bhavna.trivedi@email.com,Lucknow,Uttar Pradesh,2022-09-25
+39,Gaurav,Hegde,gaurav.hegde@email.com,Hyderabad,Telangana,2022-10-01
+40,Ankita,Shetty,ankita.shetty@email.com,Pune,Maharashtra,2022-10-05
+41,Harsh,Tandon,harsh.tandon@email.com,Delhi,Delhi,2022-10-10
+42,Aisha,Qureshi,aisha.qureshi@email.com,Mumbai,Maharashtra,2022-10-15
+43,Kunal,Bhatt,kunal.bhatt@email.com,Bangalore,Karnataka,2022-10-20
+44,Tanya,Kaur,tanya.kaur@email.com,Chandigarh,Punjab,2022-10-25
+45,Siddharth,Mukherjee,siddharth.mukherjee@email.com,Chennai,Tamil Nadu,2022-11-01
+46,Rashi,Arora,rashi.arora@email.com,Noida,Uttar Pradesh,2022-11-05
+47,Ankit,Bose,ankit.bose@email.com,Kolkata,West Bengal,2022-11-10
+48,Ishita,Rathore,ishita.rathore@email.com,Jaipur,Rajasthan,2022-11-15
+49,Naveen,Deshpande,naveen.deshpande@email.com,Delhi,Delhi,2022-11-20
+50,Jyoti,Mohan,jyoti.mohan@email.com,Indore,Madhya Pradesh,2022-11-25
+51,Abhishek,Sen,abhishek.sen@email.com,Kolkata,West Bengal,2022-12-01
+52,Manisha,Tiwari,manisha.tiwari@email.com,Lucknow,Uttar Pradesh,2022-12-05
+53,Tushar,Rajan,tushar.rajan@email.com,Jaipur,Rajasthan,2022-12-10
+54,Shweta,Prasad,shweta.prasad@email.com,Patna,Bihar,2022-12-15
+55,Mohit,Khandelwal,mohit.khandelwal@email.com,Mumbai,Maharashtra,2022-12-20
+56,Sapna,Venkatesh,sapna.venkatesh@email.com,Bangalore,Karnataka,2022-12-25
+57,Ashok,Modi,ashok.modi@email.com,Ahmedabad,Gujarat,2023-01-01
+58,Geeta,Lal,geeta.lal@email.com,Delhi,Delhi,2023-01-08
+59,Pankaj,Subramaniam,pankaj.subramaniam@email.com,Chennai,Tamil Nadu,2023-01-15
+60,Archana,Pawar,archana.pawar@email.com,Pune,Maharashtra,2023-01-22
+61,Yash,Dhawan,yash.dhawan@email.com,Mumbai,Maharashtra,2023-02-01
+62,Aman,Naidu,aman.naidu@email.com,Hyderabad,Telangana,2023-02-10
+63,Vivek,Warrier,vivek.warrier@email.com,Kochi,Kerala,2023-02-18
+64,Ramesh,Gandhi,ramesh.gandhi@email.com,Surat,Gujarat,2023-02-25
+65,Dev,Saxena,dev.saxena@email.com,Lucknow,Uttar Pradesh,2023-03-05
+66,Tarun,Gowda,tarun.gowda@email.com,Bangalore,Karnataka,2023-03-12
+67,Pranav,Kulkarni,pranav.kulkarni@email.com,Pune,Maharashtra,2023-03-20
+68,Jay,Sinha,jay.sinha@email.com,Delhi,Delhi,2023-03-28
+69,Suresh,Nayak,suresh.nayak@email.com,Mumbai,Maharashtra,2023-04-05
+70,Anil,Khanna,anil.khanna@email.com,Ahmedabad,Gujarat,2023-04-12
+71,Rohini,Dutta,rohini.dutta@email.com,Chandigarh,Punjab,2023-04-20
+72,Preeti,Mani,preeti.mani@email.com,Chennai,Tamil Nadu,2023-04-28
+73,Megha,Rastogi,megha.rastogi@email.com,Noida,Uttar Pradesh,2023-05-05
+74,Rakesh,Roy,rakesh.roy@email.com,Kolkata,West Bengal,2023-05-12
+75,Usha,Pandey,usha.pandey@email.com,Bhopal,Madhya Pradesh,2023-05-20
+76,Dinesh,Kapoor,dinesh.kapoor@email.com,Delhi,Delhi,2023-05-28
+77,Lata,Iyer,lata.iyer@email.com,Indore,Madhya Pradesh,2023-06-05
+78,Hemant,Ghosh,hemant.ghosh@email.com,Kolkata,West Bengal,2023-06-12
+79,Seema,Chauhan,seema.chauhan@email.com,Lucknow,Uttar Pradesh,2023-06-20
+80,Vijay,Thakkar,vijay.thakkar@email.com,Jaipur,Rajasthan,2023-06-28
+81,Radha,Mishra,radha.mishra@email.com,Patna,Bihar,2023-07-05
+82,Mohan,Jain,mohan.jain@email.com,Mumbai,Maharashtra,2023-07-12
+83,Alok,Saini,alok.saini@email.com,Bangalore,Karnataka,2023-07-20
+84,Sonia,Bajaj,sonia.bajaj@email.com,Ahmedabad,Gujarat,2023-07-28
+85,Girish,Rawat,girish.rawat@email.com,Delhi,Delhi,2023-08-05
+86,Prema,Nair,prema.nair@email.com,Chennai,Tamil Nadu,2023-08-12
+87,Neeraj,Patil,neeraj.patil@email.com,Pune,Maharashtra,2023-08-20
+88,Rita,Bhargava,rita.bhargava@email.com,Mumbai,Maharashtra,2023-08-28
+89,Sandip,Reddy,sandip.reddy@email.com,Hyderabad,Telangana,2023-09-05
+90,Kamla,Menon,kamla.menon@email.com,Kochi,Kerala,2023-09-12
+91,Deepa,Shah,deepa.shah@email.com,Surat,Gujarat,2023-09-20
+92,Vinod,Tiwari,vinod.tiwari@email.com,Lucknow,Uttar Pradesh,2023-09-28
+93,Aarti,Gowda,aarti.gowda@email.com,Bangalore,Karnataka,2023-10-05
+94,Gopal,Marathe,gopal.marathe@email.com,Pune,Maharashtra,2023-10-12
+95,Pushpa,Anand,pushpa.anand@email.com,Delhi,Delhi,2023-10-20
+96,Trilok,Desai,trilok.desai@email.com,Mumbai,Maharashtra,2023-11-01
+97,Uma,Rao,uma.rao@email.com,Ahmedabad,Gujarat,2023-11-10
+98,Naresh,Malhotra,naresh.malhotra@email.com,Chandigarh,Punjab,2023-11-18
+99,Hema,Krishnan,hema.krishnan@email.com,Chennai,Tamil Nadu,2023-11-25
+100,Brijesh,Agarwal,brijesh.agarwal@email.com,Noida,Uttar Pradesh,2023-12-05
